@@ -50,7 +50,7 @@ export const EmailSignup = () => {
           disabled={isSubmitting}
           className="h-12 px-8 bg-gradient-primary hover:opacity-90 transition-opacity font-medium"
         >
-          {isSubmitting ? "Joining..." : "Join Beta"}
+          {isSubmitting ? "Joining..." : "Join wait-list"}
         </Button>
       </div>
       <p className="text-sm text-muted-foreground text-center">
