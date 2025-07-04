@@ -29,8 +29,8 @@ export const HeroSection = () => {
           </p>
           <div className="flex items-center justify-center space-x-8 text-sm text-muted-foreground">
             <span></span>
-            <span>🧠 Highly Specialised AI-Powered</span>
-            <span>📱 Highly Specialised 24/7 Available</span>
+            <span>🧠 AI-Powered</span>
+            <span>📱 24/7 Available</span>
           </div>
         </div>
       </div>
