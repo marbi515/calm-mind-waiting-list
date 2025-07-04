@@ -12,8 +12,7 @@ export const HeroSection = () => {
           </h1>
           
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Revolutionary AI-powered therapy designed specifically for OCD treatment. 
-            Get personalized support and evidence-based interventions whenever you need them.
+            Clinician-trained AI coach using evidence-based ERP & CBT — 24/7, wherever you are.
           </p>
         </div>
 
