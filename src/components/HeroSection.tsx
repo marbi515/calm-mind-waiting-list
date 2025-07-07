@@ -11,9 +11,7 @@ export const HeroSection = () => {
             , trained by clinicians.
           </h1>
           
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Clinician-trained AI therapist using evidence-based approaches — 24/7, wherever you are.
-          </p>
+          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">Clinician-trained AI therapist using evidence-based approaches which are personalised and tailored to your needs — 24/7, wherever you are.</p>
         </div>
 
         {/* Email Signup */}
