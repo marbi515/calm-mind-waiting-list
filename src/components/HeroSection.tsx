@@ -6,7 +6,10 @@ export const HeroSection = () => {
         <div className="space-y-6">
           <h1 className="text-4xl md:text-6xl font-bold text-foreground leading-tight">
             <span className="text-transparent bg-clip-text bg-gradient-primary text-4xl">
-              AI-powered therapist specialised in OCD treatment
+              AI-powered therapist,
+            </span>
+            <span className="text-foreground text-4xl">
+              {" "}specialised in OCD treatment
             </span>
           </h1>
           
