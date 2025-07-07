@@ -14,21 +14,20 @@ export const ContactSection = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
+    setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    
+
     if (!formData.name || !formData.email || !formData.message) {
       toast({
         title: "Please fill in all fields",
-        description: "Name, email, and message are all required.",
+        description: "Name, email, and message are required.",
         variant: "destructive"
       });
       return;
@@ -36,16 +35,36 @@ export const ContactSection = () => {
 
     setIsSubmitting(true);
 
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    toast({
-      title: "Message sent successfully!",
-      description: "We'll get back to you as soon as possible."
-    });
-    
-    setFormData({ name: "", email: "", message: "" });
-    setIsSubmitting(false);
+    try {
+      // --- send to Formspree ---
+      const res = await fetch("https://formspree.io/f/xqabvepb", {
+        method: "POST",
+        body: new FormData(e.currentTarget),
+        headers: { Accept: "application/json" }
+      });
+
+      if (res.ok) {
+        toast({
+          title: "Message sent!",
+          description: "We’ll get back to you as soon as possible."
+        });
+        setFormData({ name: "", email: "", message: "" });
+      } else {
+        toast({
+          title: "Something went wrong",
+          description: "Please try again later.",
+          variant: "destructive"
+        });
+      }
+    } catch (err) {
+      toast({
+        title: "Network error",
+        description: "Please check your connection and try again.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -56,15 +75,15 @@ export const ContactSection = () => {
             Contact Us
           </h2>
           <p className="text-lg text-muted-foreground">
-            Have questions or feedback? We'd love to hear from you.
+            Have questions or feedback? We’d love to hear from you.
           </p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-6">
+          <input type="hidden" name="source" value="contact-form" />
+
           <div className="space-y-2">
-            <Label htmlFor="name" className="text-sm font-medium text-foreground">
-              Name
-            </Label>
+            <Label htmlFor="name">Name</Label>
             <Input
               id="name"
               name="name"
@@ -72,15 +91,12 @@ export const ContactSection = () => {
               placeholder="Your full name"
               value={formData.name}
               onChange={handleChange}
-              className="h-12 border-2 border-border focus:border-primary transition-colors"
               disabled={isSubmitting}
             />
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="email" className="text-sm font-medium text-foreground">
-              Email
-            </Label>
+            <Label htmlFor="email">Email</Label>
             <Input
               id="email"
               name="email"
@@ -88,32 +104,28 @@ export const ContactSection = () => {
               placeholder="your.email@example.com"
               value={formData.email}
               onChange={handleChange}
-              className="h-12 border-2 border-border focus:border-primary transition-colors"
               disabled={isSubmitting}
             />
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="message" className="text-sm font-medium text-foreground">
-              Message
-            </Label>
+            <Label htmlFor="message">Message</Label>
             <Textarea
               id="message"
               name="message"
-              placeholder="Tell us about your questions, feedback, or how we can help you..."
+              placeholder="How can we help?"
               value={formData.message}
               onChange={handleChange}
-              className="min-h-32 border-2 border-border focus:border-primary transition-colors resize-none"
               disabled={isSubmitting}
             />
           </div>
 
           <Button
             type="submit"
+            className="w-full h-12"
             disabled={isSubmitting}
-            className="w-full h-12 bg-gradient-primary hover:opacity-90 transition-opacity font-medium"
           >
-            {isSubmitting ? "Sending..." : "Send Message"}
+            {isSubmitting ? "Sending…" : "Send Message"}
           </Button>
         </form>
       </div>
