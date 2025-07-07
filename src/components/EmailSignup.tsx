@@ -36,6 +36,6 @@ export const EmailSignup = () => {
           {isSubmitting ? "Joining..." : "Get early access"}
         </Button>
       </div>
-      <p className="text-sm text-muted-foreground text-center">We will email you once the beta is ready.</p>
+      <p className="text-sm text-muted-foreground text-center">We will email you once the beta version is ready.</p>
     </form>;
 };
