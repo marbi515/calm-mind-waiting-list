@@ -5,10 +5,10 @@ export const HeroSection = () => {
         {/* Hero Content */}
         <div className="space-y-6">
           <h1 className="text-4xl md:text-6xl font-bold text-foreground leading-tight">
-            Intelligent Therapy for{" "}
             <span className="text-transparent bg-clip-text bg-gradient-primary">
-              OCD Treatment
+              Instant OCD support
             </span>
+            , trained by clinicians.
           </h1>
           
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
