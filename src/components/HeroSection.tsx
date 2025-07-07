@@ -23,9 +23,6 @@ export const HeroSection = () => {
 
         {/* Trust Indicators */}
         <div className="pt-8 space-y-4">
-          <p className="text-sm text-muted-foreground">
-            Developed with clinical expertise • Evidence-based approach
-          </p>
           <div className="flex items-center justify-center space-x-8 text-sm text-muted-foreground">
             <span>🧠 Highly specialised</span>
             <span>🧠 AI-Powered</span>
