@@ -6,9 +6,8 @@ export const HeroSection = () => {
         <div className="space-y-6">
           <h1 className="text-4xl md:text-6xl font-bold text-foreground leading-tight">
             <span className="text-transparent bg-clip-text bg-gradient-primary">
-              Instant OCD support
+              Intelligent specialised therapist for OCD
             </span>
-            , trained by clinicians.
           </h1>
           
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">Clinician-trained AI therapist using evidence-based approaches which are personalised and tailored to your needs — 24/7, wherever you are.</p>
