@@ -54,7 +54,7 @@ export const EmailSignup = () => {
         </Button>
       </div>
       <p className="text-sm text-muted-foreground text-center">
-        We'll only email you when the beta is ready. No spam, ever.
+        We'll email you when the beta is ready.
       </p>
     </form>
   );
