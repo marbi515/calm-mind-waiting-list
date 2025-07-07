@@ -12,10 +12,7 @@ export const HeroSection = () => {
           </h1>
           
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Clinician-trained AI therapist using evidence-based approaches.
-          </p>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Join the wait-list to test out our first Beta version.
+            Clinician-trained AI therapist using evidence-based ERP & CBT — 24/7, wherever you are.
           </p>
         </div>
 
