@@ -5,12 +5,12 @@ export const HeroSection = () => {
         {/* Hero Content */}
         <div className="space-y-6">
           <h1 className="text-4xl md:text-6xl font-bold text-foreground leading-tight">
-            <span className="text-transparent bg-clip-text bg-gradient-primary">
+            <span className="text-transparent bg-clip-text bg-gradient-primary text-4xl">
               AI-powered therapist specialised in OCD treatment
             </span>
           </h1>
           
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">Clinician-trained AI therapist using evidence-based approaches which are personalised and tailored to your needs — 24/7, wherever you are.</p>
+          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">Trained by clinicians using personalised evidence-based approaches.</p>
         </div>
 
         {/* Email Signup */}
